@@ -1,0 +1,55 @@
+# Topics of interest
+lidar_topic: /velodyne/front/filtered 
+stereo_topic: /realsense/front/depth_registered/points
+sonar_topic: /sonar_array_tracker/obstacles 
+fused_grid_topic: fused_grid
+
+# Frames of interest
+base_link_frame_id: base_link
+base_footprint_frame_id: base_footprint
+lidar_frame_id: velodyne_front_link
+stereo_frame_id: realsense_front_link
+odom_frame_id: odom
+
+# Option to publish
+publish_odom_map: true
+
+# Tunable Parameters
+
+# Crop box parameters (in base_link frame)
+# Lidar crop box
+# max_x: 11.0
+# max_y: 1.5
+# max_z: 1.372
+
+# min_x: 2.1
+# min_y: -1.5
+# min_z: -1.0
+max_x: 11.0
+max_y: 4.5
+max_z: 1.372
+
+min_x: 2.1
+min_y: -4.5
+min_z: -1.0
+
+# #Realsense crop box
+# s_max_x: 4.0
+# s_max_y: 1.5
+# s_max_z: 1.372
+
+# s_min_x: 2.1
+# s_min_y: -1.5
+# s_min_z: -1.0 
+s_max_x: 4.0
+s_max_y: 4.5
+s_max_z: 1.372
+
+s_min_x: 2.1
+s_min_y: -4.5
+s_min_z: -1.0 
+
+# Voxel Grid Parameters (we just used a simple square for the sake of simplicity)
+leaf_size : 0.2
+
+

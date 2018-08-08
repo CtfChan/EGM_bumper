@@ -1,0 +1,11 @@
+min_obstacle_distance: 0.5
+time_to_collision: 2.0
+odometry_frequency: 5.0
+
+source0:
+  topic: /velodyne/front/virtual_bumper_obstacles/obstacles
+  frequency: 5.0
+
+source1:
+  topic: /realsense/front/virtual_bumper_obstacles/obstacles
+  frequency: 5.0

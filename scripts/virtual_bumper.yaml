@@ -1,0 +1,12 @@
+min_obstacle_distance: 0.5
+time_to_collision: 1.5
+odometry_frequency: 1.0
+
+source0:
+  topic: /zio/obstacles
+  frequency: 1.0
+
+# source0:
+#  topic: /realsense/front/virtual_bumper_obstacles/obstacles
+#  frequency: 5.0
+

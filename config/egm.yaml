@@ -1,0 +1,34 @@
+grid_map_topic: /grid_map_fused
+grid_map_visualizations:
+  - name: elevation
+    type: point_cloud
+    params:
+     layer: elevation
+  - name: elevation_grid
+    type: occupancy_grid
+    params:
+     layer: elevation
+     data_min: -3.0
+     data_max: 3.0
+
+  - name: obstacle_points
+    type: point_cloud
+    params:
+     layer: obstacle
+  - name: obstacle_grid
+    type: occupancy_grid
+    params:
+     layer: obstacle
+     data_min: 0.0
+     data_max: 2.0
+
+  - name: elevation_low
+    type: point_cloud
+    params:
+     layer: elevation_low
+  - name: elevation_low_grid
+    type: occupancy_grid
+    params:
+     layer: elevation_low
+     data_min: -1.0
+     data_max: 2.0

@@ -1,0 +1,7 @@
+<library path="lib/libEGM_class">
+  <class name="EGM_ns/EGM_class" type="EGM_ns::EGM_class" base_class_type="nodelet::Nodelet">
+    <description> 
+      Nodelet for processessing stereo and lidar point clouds and producing obstacle messages.
+    </description>
+  </class>
+</library>

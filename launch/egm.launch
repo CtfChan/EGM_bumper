@@ -1,0 +1,49 @@
+<launch>
+
+  <!-- Arguments -->
+  <arg name="bag_play" default="true" />
+  <arg name ="path_to_bag" default="/home/christopherchan/Desktop/acfr/bags/2018-06-28-11-07-51_chris_to_carpark.bag" />  
+  <arg name="nodelet" default="true" />
+  
+  <arg name="rviz" default="true" />
+  <arg name="rviz_cfg" default="/home/christopherchan/acfr_ws/src/bumper_code/launch/config/config.rviz" />
+
+
+<!-- Bags to use -->
+<!-- 2018-05-22-08-58-14_tt_rs_logging.bag -->
+<!-- 2018-06-08-15-10-19_working_realsense.bag  -->
+<!-- 2018-06-13-13-17-12_j18drive_part1.bag-->
+<!-- EV3: 2018-06-28-11-28-35_chris_rooftop.bag -->
+<!-- EV3: 2018-06-28-11-07-51_chris_to_carpark.bag -->
+<!-- EV3: 2018-07-03-10-53-28_chris_walking_inrecements.bag -->
+<!-- EV3: (PROBLEM WITH LIDAR) 2018-07-03-11-32-53_chris_thin_horizontal_pole.bag-->
+<!-- EV3: 2018-07-04-09-44-51_chris_garage.bag -->
+<!-- EV3: 2018-07-11-11-22-18_chris_first_sonar.bag -->
+<!-- EV3: 2018-07-16-15-38-57_chris_thin_obstacles.bag -->
+<!-- EV3: 2018-07-19-15-13-03_chris_bag_no_obs.bag --> 
+<!-- EV3: 2018-07-20-10-38-07_chris_ackermann_injection.bag -->
+
+  <!-- Launch RViz with the demo configuration -->
+  <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(find EGM_class)/rviz/egm.rviz" />
+
+  <!--Play rosbag -->
+  <node if="$(arg bag_play)" pkg="rosbag" type="play" name="player" output="screen" args="-q -r 1.0 --clock -l --queue=10 $(arg path_to_bag) " />
+
+  <!-- Nodelet -->
+  <node if="$(arg nodelet)" pkg="nodelet" type="nodelet" name="standalone_nodelet"  args="manager" />
+  <node if="$(arg nodelet)" pkg="nodelet" type="nodelet" name="EGM_class" args="load EGM_ns/EGM_class standalone_nodelet" output="screen" required="true">
+    <rosparam command="load" file="$(find EGM_class)/config/params.default.yaml"  />
+
+    <remap from="/obstacles" to="zio/obstacles" />
+  </node>
+
+  <!-- Launch the grid map visualizer -->
+  <node if="$(arg nodelet)" pkg="grid_map_visualization" type="grid_map_visualization" name="grid_map_visualization" output="screen">
+    <rosparam command="load" file="$(find EGM_class)/config/egm.yaml" />
+  </node>
+
+
+</launch>
+
+
+
