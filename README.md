@@ -8,6 +8,10 @@ This nodelet subscribes to a lidar point cloud, stereo point cloud and a sonar p
 
 https://docs.google.com/document/d/1T3X65S8JkSBpmvoSFQGFBKfZ1-tISEBzRHocDmxHMqA/edit?usp=sharing.
 
+Demo of this code is available at:
+
+https://www.youtube.com/watch?v=K7GaomP2tZw
+
 #### Subscribed Topics
 
 * **`/lidar`** (sensor_msgs::PointCloud2)
