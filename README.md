@@ -90,4 +90,4 @@ Run the following commands in another terminal on your laptop (don't forget to s
 
 ## Bugs and Other Probelms
 
-Feel free to email me at christophertzechan@gmail.com if there's anything that was unclear or if there are some bugs that need to be changed. 
+Let me know if there's anything that was unclear or if there are some bugs that need to be changed. 
