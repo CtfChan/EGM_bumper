@@ -1,4 +1,4 @@
-**Author(s): Christopher Chan (christophertzechan@gmail.com)**
+**Author(s): Christopher Chan**
 
 ## Overview
 EGM stands for ephemeral grid mapping (I will try to come up with better names next time). 
